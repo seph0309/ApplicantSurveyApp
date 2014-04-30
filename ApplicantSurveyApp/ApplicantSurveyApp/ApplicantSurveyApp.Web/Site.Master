@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ApplicantSurveyApp.Web.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Deltek Applicant Experience Survey</title>
+    <asp:PlaceHolder runat="server">     
+         <%-- <%: Scripts.Render("~/bundles/modernizr") %>--%>
+    </asp:PlaceHolder>  
+    <webopt:BundleReference runat="server" Path="~/Content/css" /> 
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server"> 
+    <script type="text/javascript" src="Scripts/jquery-1.8.2.min.js" ></script>  
+        
+    <div id="body">
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; <%: DateTime.Now.Year %> - Deltek Recruitment Team</p>
+                <br />
+                <a id="registerLink" runat="server" href="~/Admin/Admin.aspx">Admin</a>
+            </div>
+        </div>
+    </footer>
+    </form>
+</body>
+</html>
