@@ -26,9 +26,11 @@
     <footer>
         <div class="content-wrapper">
             <div class="float-left">
-                <p>&copy; <%: DateTime.Now.Year %> - Deltek Recruitment Team</p>
-                <br />
-                <a id="registerLink" runat="server" href="~/Admin/Admin.aspx">Admin</a>
+                <h3>
+                    <p>&copy; <%: DateTime.Now.Year %> - Deltek Recruitment Team</p>
+                    <br />
+                    <a id="registerLink" runat="server" href="~/Admin/Admin.aspx">Admin</a>
+                </h3>
             </div>
         </div>
     </footer>
