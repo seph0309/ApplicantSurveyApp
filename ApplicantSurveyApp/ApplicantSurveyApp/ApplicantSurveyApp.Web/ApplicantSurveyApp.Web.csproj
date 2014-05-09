@@ -223,6 +223,7 @@
     </Content>
     <Content Include="Content\fonts\Dummies.ttf" />
     <None Include="Properties\PublishProfiles\ApplicantSurveyApp.pubxml" />
+    <None Include="Properties\PublishProfiles\ApplicantSurveyAppMAKAPP64VS.pubxml" />
     <None Include="Reports.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Reports.Designer.cs</LastGenOutput>
