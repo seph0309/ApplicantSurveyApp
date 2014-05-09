@@ -221,6 +221,7 @@
     <Content Include="Reports.xsc">
       <DependentUpon>Reports.xsd</DependentUpon>
     </Content>
+    <Content Include="Content\fonts\Dummies.ttf" />
     <None Include="Properties\PublishProfiles\ApplicantSurveyApp.pubxml" />
     <None Include="Reports.xsd">
       <Generator>MSDataSetGenerator</Generator>

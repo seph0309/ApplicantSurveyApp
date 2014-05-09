@@ -1,4 +1,9 @@
-﻿html {
+﻿@font-face {
+	font-family: Dummies;
+	src: url('fonts/Dummies.ttf') format('truetype');
+}
+
+html {
     background-color: #e2e2e2;
     margin: 0;
     padding: 0;
@@ -9,7 +14,7 @@ body {
     border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-family:   Dummies;
     margin: 0;
     padding: 0;
 }
@@ -206,8 +211,7 @@ ul#menu {
 /* page elements
 ----------------------------------------------------------*/
 /* featured */
-.featured {
-    background-color: #fff;
+.featured { 
 }
 
     .featured .content-wrapper {
