@@ -168,8 +168,8 @@ namespace ApplicantSurveyApp.Web
 			LiteralControl literalControlspace; 
 
 			//Initial Size. Standard size for smiley is 150px 
-			int width = ChangeImageSize(250);
-			int height = ChangeImageSize(250);
+			int width = ChangeImageSize(200);
+			int height = ChangeImageSize(200);
 
 
 			foreach (Rate rate in rates) {
