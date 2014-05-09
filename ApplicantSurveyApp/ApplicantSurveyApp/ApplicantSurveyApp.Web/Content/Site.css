@@ -103,7 +103,7 @@ h5, h6 {
 }
 
 #body {
-    background-color: #fafafa;
+    background-color: rgba(5, 82, 155, 0.27);
     clear: both;
     padding-bottom: 35px;
 }
@@ -207,7 +207,7 @@ ul#menu {
 }
 
     .featured .content-wrapper { 
-        background-color: #05529b;
+        background-color: rgba(5, 82, 155, 0.84);
         color: #3e5667;
         padding: 20px 40px 30px 40px;
     }
