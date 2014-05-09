@@ -175,6 +175,7 @@ namespace ApplicantSurveyApp.Web
 			foreach (Rate rate in rates) {
 				imageButton = new ImageButton();
 				imageButton.ImageUrl = rate.imageLocation;
+				imageButton.CssClass = "imgButtonImg";
 				imageButton.ID = rate.rateID.ToString();
 				imageButton.AlternateText = rate.rateDescription.ToString();
 				imageButton.Width = width;

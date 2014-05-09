@@ -40,15 +40,13 @@
           
         </asp:View>
         <asp:View ID="questionView" runat="server" >
-                <b>
-                    <asp:Label runat="server" ID="countLabel"></asp:Label>
-                </b>
+                 <asp:Label runat="server" ID="countLabel"></asp:Label>
             <table>
                 <tr>
                     <td>
-                        <h2>
+                        <b>
                             <asp:Label runat="server" ID="questionLabel" Text=""></asp:Label>
-                        </h2>
+                        </b>
                     </td> 
                 </tr>
                 <tr>
@@ -88,6 +86,15 @@
     .NavigationButtons {
         height:40px;
         width:60px;
+        margin: 0; 
+        padding: 0; 
+        border: 0; 
     }
+    .imgButtonImg 
+    {
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    } 
 </style>
 </asp:Content>
