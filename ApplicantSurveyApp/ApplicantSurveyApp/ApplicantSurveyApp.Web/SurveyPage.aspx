@@ -19,11 +19,10 @@
  <div class="float-left"> 
     <asp:MultiView ID="MultiView1" runat="server">
         <asp:View ID="applicantInformationView" runat="server" OnDeactivate="ApplicantInformationView_Deactivate" OnActivate="ApplicantInformationView_Activate">
-             <h2>
-                 <b>
-                     Applicant Information
-                 </b>
-             </h2>
+               <br />
+             <b>
+                Applicant Information
+            </b>
             <table>
                 <tr>  
                     <td>
