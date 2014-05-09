@@ -134,7 +134,7 @@ namespace ApplicantSurveyApp.Web
 				commentsTextBox.Text = "";
 			}
 			questionLabel.Text = question.questionDescription;
-			countLabel.Text = "Question " + surveyStep.ToString() + " of " + questions.Count.ToString();
+			countLabel.Text = surveyStep.ToString() + " of " + questions.Count.ToString();
 		}
 		private void PopulateAnswer(int step) {
 			if (rateID == 0) rateID = 0;

@@ -16,7 +16,7 @@
           </section> 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-        <h5>
+        <h3>
             <p>
                 To learn more about Deltek, visit <a href="http://Deltek.com" title="Deltek Website">http://deltek.com</a>.
                 Or like us on: <br />
@@ -24,7 +24,7 @@
                     www.facebook.com/HappyAtDeltek
                               </a> 
             </p>
-        </h5> 
+        </h3> 
       <div id="loadingDiv">
           <b>Loading images.... </b>
           <img src="Images/LoadingBar.gif" />
