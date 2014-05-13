@@ -84,7 +84,8 @@ namespace ApplicantSurveyApp.Web
 		protected void ApplicantInformationView_Deactivate(object sender, EventArgs e) {
 			applicant = new Applicant {
 				firstName = firstNameTextBox.Text,
-				lastName = lastNameTextBox.Text
+				lastName = lastNameTextBox.Text,
+				position = positionTextBox.Text
 			}; 
 		}
 		#endregion

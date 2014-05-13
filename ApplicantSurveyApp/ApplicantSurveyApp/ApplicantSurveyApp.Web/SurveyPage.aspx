@@ -23,17 +23,25 @@
              <b>
                 Applicant Information
             </b>
+            <br />
             <table>
+                <tr>
+                    <td>
+                        <asp:TextBox runat="server" ID="positionTextBox" CssClass="positionTextBox"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ID="positionRequiredFieldValidator" ControlToValidate="positionTextBox" ErrorMessage="Position required" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
                 <tr>  
                     <td>
+                        <br />
+                        Name (optional)
+                        <br />
                         <asp:TextBox runat="server" ID="firstNameTextBox" CssClass="firstNameTextBox"></asp:TextBox>
-                        <asp:RequiredFieldValidator runat="server" ID="firstNameRequiredFieldValidator" ControlToValidate="firstNameTextBox" ErrorMessage="First name required" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td> 
                 </tr>
                 <tr>  
                     <td>
                         <asp:TextBox runat="server" ID="lastNameTextBox" CssClass="lastNameTextBox"></asp:TextBox>
-                        <asp:RequiredFieldValidator runat="server" ID="lastNameRequiredFieldValidator" ControlToValidate="lastNameTextBox" ErrorMessage="Last name required" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td> 
                 </tr>
             </table>
@@ -74,8 +82,8 @@
 <script type="text/javascript" > 
     $(document).ready(function () {
         $('.firstNameTextBox').watermark('First Name', {useNative : false});
-        $('.lastNameTextBox').watermark('Last Name', {useNative : false});
-             
+        $('.lastNameTextBox').watermark('Last Name', { useNative: false });
+        $('.positionTextBox').watermark('Position', { useNative: false });             
         });
 </script>
 <style type="text/css">

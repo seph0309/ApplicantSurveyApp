@@ -31,6 +31,24 @@ namespace ApplicantSurveyApp.Web {
         protected global::System.Web.UI.WebControls.View applicantInformationView;
         
         /// <summary>
+        /// positionTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox positionTextBox;
+        
+        /// <summary>
+        /// positionRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator positionRequiredFieldValidator;
+        
+        /// <summary>
         /// firstNameTextBox control.
         /// </summary>
         /// <remarks>
@@ -40,15 +58,6 @@ namespace ApplicantSurveyApp.Web {
         protected global::System.Web.UI.WebControls.TextBox firstNameTextBox;
         
         /// <summary>
-        /// firstNameRequiredFieldValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator firstNameRequiredFieldValidator;
-        
-        /// <summary>
         /// lastNameTextBox control.
         /// </summary>
         /// <remarks>
@@ -56,15 +65,6 @@ namespace ApplicantSurveyApp.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lastNameTextBox;
-        
-        /// <summary>
-        /// lastNameRequiredFieldValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator lastNameRequiredFieldValidator;
         
         /// <summary>
         /// questionView control.
