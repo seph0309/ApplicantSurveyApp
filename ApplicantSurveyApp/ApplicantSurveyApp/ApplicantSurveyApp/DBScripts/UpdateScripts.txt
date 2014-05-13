@@ -1,0 +1,41 @@
+﻿IF NOT EXISTS( SELECT 1 FROM SYS.COLUMNS WHERE NAME='POSITION')
+ALTER TABLE Applicant ADD [Position] nvarchar(50) NULL
+
+GO
+
+/*
+	Modify spSaveApplicant
+*/
+
+USE [DeltekApplicantSurvey]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spSaveApplicant]    Script Date: 05/13/2014 10:12:11 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[spSaveApplicant]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[spSaveApplicant]
+GO
+
+USE [DeltekApplicantSurvey]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spSaveApplicant]    Script Date: 05/13/2014 10:12:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ CREATE PROCEDURE [dbo].[spSaveApplicant]
+ @FirstName	NVARCHAR(50),
+ @LastName	NVARCHAR(50),
+ @Position	NVARCHAR(50)
+ AS
+ 
+ INSERT INTO Applicant (FirstName,LastName,Position)
+ VALUES (@FirstName,@LastName,@Position)
+ 
+ SELECT SCOPE_IDENTITY() AS [ApplicantID]
+GO
+
+

@@ -11,5 +11,7 @@ namespace ApplicantSurveyApp{
 		public string firstName { get; set; }
 		[DataMember]
 		public string lastName { get; set; }
-	}
+        [DataMember]
+        public string position { get; set; }
+    }
 }

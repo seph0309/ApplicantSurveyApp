@@ -16,7 +16,7 @@ namespace ApplicantSurveyApp
 		private int SaveApplicant(Applicant applicant) {
             ds = new DataSet();
             conn = new DBConn.DBConn();
-			ds = conn.execSQLCommand("EXEC spSaveApplicant '" + applicant.firstName + "', '" + applicant.lastName + "'");
+            ds = conn.execSQLCommand(String.Format("EXEC spSaveApplicant '{0}', '{1}', '{2}' ", applicant.firstName, applicant.lastName, applicant.position));
             if (Convert.ToInt32(ds.Tables[0].Rows.Count) > 0)
                 return Convert.ToInt32(ds.Tables[0].Rows[0][0]);
             else
