@@ -1,7 +1,8 @@
 ﻿IF NOT EXISTS( SELECT 1 FROM SYS.COLUMNS WHERE NAME='POSITION')
-ALTER TABLE Applicant ADD [Position] nvarchar(50) NULL
-
+ALTER TABLE Applicant ADD [Position] nvarchar(50) NOT NULL
 GO
+ALTER TABLE Applicant ALTER COLUMN [FirstName]  nvarchar(50) NULL
+ALTER TABLE Applicant ALTER COLUMN [LastName]  nvarchar(50) NULL 
 
 /*
 	Modify spSaveApplicant
