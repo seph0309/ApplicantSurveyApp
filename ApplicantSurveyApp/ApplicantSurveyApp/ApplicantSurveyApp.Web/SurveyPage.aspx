@@ -20,9 +20,9 @@
     <asp:MultiView ID="MultiView1" runat="server">
         <asp:View ID="applicantInformationView" runat="server" OnDeactivate="ApplicantInformationView_Deactivate" OnActivate="ApplicantInformationView_Activate">
                <br />
-             <b>
+             <h2>
                 Applicant Information
-            </b>
+            </h2>
             <br />
             <table>
                 <tr>
