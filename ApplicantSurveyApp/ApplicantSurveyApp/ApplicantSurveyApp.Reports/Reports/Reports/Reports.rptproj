@@ -13,6 +13,10 @@
       <Name>Survey Percentage Report.rdl</Name>
       <FullPath>Survey Percentage Report.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Survey Statistic Report.rdl</Name>
+      <FullPath>Survey Statistic Report.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>
@@ -21,8 +25,8 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://ltop2012m00153/ReportServer_MSSQLSERVER2012</TargetServerURL>
-        <TargetFolder>ApplicantSurveyApp</TargetFolder>
+        <TargetServerURL>http://makapp64vs/ReportServer_MSSQLSERVER2012</TargetServerURL>
+        <TargetFolder>Applicant Survey App Reports</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
         <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
