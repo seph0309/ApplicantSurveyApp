@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DataSource1">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=LTOP2012M00153\MSSQLSERVER2012;Initial Catalog=DeltekApplicantSurvey</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>9f4bbf71-1166-4e45-be9b-fffc2b472389</DataSourceID>
+</RptDataSource>
