@@ -17,6 +17,10 @@
       <Name>Survey Statistic Report.rdl</Name>
       <FullPath>Survey Statistic Report.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Comments and Position Count Report.rdl</Name>
+      <FullPath>Comments and Position Count Report.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>
@@ -25,7 +29,7 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://localhost/ReportServer_MSSQLSERVER2012</TargetServerURL>
+        <TargetServerURL>http://makapp64vs/ReportServer_MSSQLSERVER2012</TargetServerURL>
         <TargetFolder>Applicant Survey App Reports</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
