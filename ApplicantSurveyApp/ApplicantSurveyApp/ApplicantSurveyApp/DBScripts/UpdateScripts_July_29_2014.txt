@@ -1,0 +1,141 @@
+USE [DeltekApplicantSurvey]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spViewSurveyStatistics]    Script Date: 7/29/2014 10:55:52 PM ******/
+DROP PROCEDURE [dbo].[spViewSurveyStatistics]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spViewSurveyStatistics]    Script Date: 7/29/2014 10:55:52 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[spViewSurveyStatistics]
+(
+@DateCreatedFrom	DATETIME,
+@DateCreatedTo	DATETIME
+)
+AS
+DECLARE @ApplicantCount	INT
+
+SELECT @ApplicantCount = COUNT(DISTINCT  ApplicantID) FROM Survey WHERE DateCreated BETWEEN @DateCreatedFrom AND @DateCreatedTo
+
+SELECT Question.QUESTIONID AS ID,Question.QUESTIONDESCRIPTION AS DESCRIPTION,
+SUM(CASE RateID WHEN '3' THEN 1 ELSE 0 END) AS [EXCELLENT],
+SUM(CASE RateID WHEN '2' THEN 1 ELSE 0 END) AS [FAIR],
+SUM(CASE RateID WHEN '1' THEN 1 ELSE 0 END) AS [POOR],
+@ApplicantCount AS [TOTAL APPLICANTS] FROM Survey
+INNER JOIN Question ON Survey.QuestionID=Question.QuestionID
+WHERE DateCreated BETWEEN @DateCreatedFrom AND @DateCreatedTo
+AND Question.QuestionID NOT IN (5,15) -- 'Other comments?' question
+GROUP BY  Question.QuestionID,Question.QuestionDescription
+
+
+
+GO
+
+
+USE [DeltekApplicantSurvey]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spViewSurveyPercentage]    Script Date: 7/29/2014 10:55:47 PM ******/
+DROP PROCEDURE [dbo].[spViewSurveyPercentage]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spViewSurveyPercentage]    Script Date: 7/29/2014 10:55:47 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+/*
+[spViewSurveyPercentage] '7/1/2014','7/31/2014'
+*/
+
+CREATE PROCEDURE [dbo].[spViewSurveyPercentage]
+(
+@DateCreatedFrom	DATETIME,
+@DateCreatedTo	DATETIME
+)
+AS
+DECLARE @ApplicantCount	DECIMAL(4,2)
+SELECT @ApplicantCount = COUNT(DISTINCT  ApplicantID) FROM Survey 
+WHERE DateCreated BETWEEN @DateCreatedFrom AND @DateCreatedTo
+
+SELECT Question.QUESTIONID AS ID, Question.QuestionDescription AS DESCRIPTION,
+CONVERT(VARCHAR(10),ROUND((SUM(CASE RateID WHEN '3' THEN 1 ELSE 0 END) / @ApplicantCount)* 100 ,2)) AS [EXCELLENT],
+CONVERT(VARCHAR(10),ROUND((SUM(CASE RateID WHEN '2' THEN 1 ELSE 0 END) / @ApplicantCount) * 100 ,2) ) AS [FAIR],
+CONVERT(VARCHAR(10),ROUND((SUM(CASE RateID WHEN '1' THEN 1 ELSE 0 END) / @ApplicantCount) * 100 ,2)) AS [POOR],
+'100.00%' AS [TOTAL], @ApplicantCount AS [TOTAL APPLICANTS] 
+FROM Survey
+INNER JOIN Question ON Survey.QuestionID=Question.QuestionID
+WHERE DateCreated BETWEEN @DateCreatedFrom AND @DateCreatedTo
+AND Question.QuestionID NOT IN (5,15) -- 'Other comments?' question
+GROUP BY  Question.QuestionID,Question.QuestionDescription
+
+GO
+
+
+USE [DeltekApplicantSurvey]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spViewPositionCount]    Script Date: 7/29/2014 10:55:42 PM ******/
+DROP PROCEDURE [dbo].[spViewPositionCount]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spViewPositionCount]    Script Date: 7/29/2014 10:55:42 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[spViewPositionCount]
+(
+@DateCreatedFrom	DATETIME,
+@DateCreatedTo	DATETIME
+)
+AS 
+SELECT POSITION,COUNT(ApplicantID) AS [HEAD COUNT] FROM Applicant 
+WHERE ApplicantID IN
+(SELECT ApplicantID FROM Survey WHERE DateCreated BETWEEN @DateCreatedFrom AND @DateCreatedTo )
+GROUP BY Position
+GO
+
+
+USE [DeltekApplicantSurvey]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spViewComments]    Script Date: 7/29/2014 10:55:37 PM ******/
+DROP PROCEDURE [dbo].[spViewComments]
+GO
+
+/****** Object:  StoredProcedure [dbo].[spViewComments]    Script Date: 7/29/2014 10:55:37 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+/*
+[spViewCommentsAndPositionCount] '7/3/2014','7/31/2014'
+*/ 
+CREATE PROCEDURE [dbo].[spViewComments]
+(
+@DateCreatedFrom	DATETIME,
+@DateCreatedTo	DATETIME
+)
+AS 
+select POSITION,FirstName,LastName,COMMENT,DATECREATED as [SURVEY DATE] from Survey 
+INNER JOIN Applicant on Survey.ApplicantID=Applicant.ApplicantID
+where Comment<>'' AND DateCreated BETWEEN @DateCreatedFrom AND @DateCreatedTo
+
+GO
+
+
