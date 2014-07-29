@@ -25,7 +25,7 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://makapp64vs/ReportServer_MSSQLSERVER2012</TargetServerURL>
+        <TargetServerURL>http://localhost/ReportServer_MSSQLSERVER2012</TargetServerURL>
         <TargetFolder>Applicant Survey App Reports</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
