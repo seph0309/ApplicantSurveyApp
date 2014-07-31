@@ -17,12 +17,21 @@ namespace ApplicantSurveyApp.Web.Admin {
 		[WebMethod]
 		public static string GetReport(string reportName) {
 			try {
-				string folderPath = "../Downloads/";
-				string fullPath = HttpContext.Current.Server.MapPath(folderPath);
-				ApplicantSurveyApp app = new ApplicantSurveyApp();
+                //string folderPath = "../Downloads/";
+                //string fullPath = HttpContext.Current.Server.MapPath(folderPath);
+                //ApplicantSurveyApp app = new ApplicantSurveyApp();
 
-				string retValue = app.ExportReport(reportName, fullPath);
-				return folderPath + retValue;
+                //string retValue = app.ExportReport(reportName, fullPath);
+                //return folderPath + retValue;
+                string reportFileName = string.Empty;
+                if (reportName == "SurveyStatistics")
+                    reportFileName = "Survey Statistic Report";
+                else if (reportName == "SurveyPercentage")
+                    reportFileName = "Survey Percentage Report";
+                else if (reportName == "CommentsAndPositionCount")
+                    reportFileName = "Comments and Position Count Report";
+
+                return string.Format("ReportDetails.aspx?reportFileName={0}", reportFileName);
 			}
 			catch (Exception ex) {
 				return ex.Message.ToString();

@@ -28,6 +28,7 @@
         <option value=""></option>
         <option value="SurveyStatistics">Statistics Report</option>
         <option value="SurveyPercentage">Percentage Report</option>
+        <option value="CommentsAndPositionCount">Comments and Position Count Report</option>
     </select> 
     
     <script type="text/javascript" src="../Scripts/jquery-1.8.2.min.js" ></script>  
@@ -68,7 +69,8 @@
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function (response) {
-                            window.location.href = response.d;
+                            //window.location.href = response.d;
+                            window.open(response.d, '_blank');
                         },
                         failure: function (msg) {
                             alert(msg.d);

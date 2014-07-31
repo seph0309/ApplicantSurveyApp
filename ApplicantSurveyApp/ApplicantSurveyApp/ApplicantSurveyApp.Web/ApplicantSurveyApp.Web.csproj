@@ -132,6 +132,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\ReportDetails.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\chosen.css" />
     <Content Include="Content\Site.css" />
@@ -307,6 +308,13 @@
     </Compile>
     <Compile Include="Admin\Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ReportDetails.aspx.cs">
+      <DependentUpon>ReportDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ReportDetails.aspx.designer.cs">
+      <DependentUpon>ReportDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
