@@ -14,21 +14,17 @@
    <link rel="stylesheet" href="../Content/chosen.css">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-     <div id="loadingDiv">
-          <b>Generating report please wait.... </b>
-          <img src="../Images/LoadingBar.gif" />
-      </div>
-      <div id="doneDiv">
-          <b>
-              Download complete.
-          </b>
-      </div>
+     
   <br />
-    <select data-placeholder="Please select a report..." id="selectReports" class="chosen-select" style="width:350px;" tabindex="2">
+  <br />
+  <br />
+    Reminder: be sure to turn off the pop-up blocker for you to open the reports.
+  <br />
+    <select data-placeholder="Please select a report..." id="selectReports" class="chosen-select" style="width:450px;" tabindex="2">
         <option value=""></option>
-        <option value="SurveyStatistics">Statistics Report</option>
+        <%--<option value="SurveyStatistics">Statistics Report</option>
         <option value="SurveyPercentage">Percentage Report</option>
-        <option value="CommentsAndPositionCount">Comments and Position Count Report</option>
+        <option value="CommentsAndPositionCount">Comments and Position Count Report</option>--%>
     </select> 
     
     <script type="text/javascript" src="../Scripts/jquery-1.8.2.min.js" ></script>  
@@ -36,41 +32,56 @@
 
         <script type="text/javascript">
             //Get Images
+
+            function popupwindow(url, title, w, h) {
+                var left = (screen.width / 2) - (w / 2);
+                var top = (screen.height / 2) - (h / 2);
+                return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+            }
+
+
+            //Populate dropdown
+            $.ajax({
+                type: "POST",
+                async: false,
+                url: "Admin.aspx/GetReportNames",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    for (var index = 0 ; index < response.d.length; index++)
+                    {
+                        $('#selectReports').append(
+                            $('<option></option>').val(response.d[index].replace(/\s+/g, '')).html(response.d[index])
+                            );
+                    }
+                },
+                failure: function (msg) {
+                    alert(msg.d);
+                }
+            });
+
             $(document).ready(function () {
-
-                var $loading = $('#loadingDiv').hide();
-                var $doneDiv = $('#doneDiv').hide();
-
+                 
                 $('#selectReports').chosen('selectReports');
                 $('#selectReports').val('');
-
-                $(document)
-                  .ajaxStart(function () {
-                      $loading.show();
-                      $doneDiv.hide();
-                  })
-                .ajaxComplete(function () {
-                    $doneDiv.show();
-                    $loading.hide();
-                });
-
+                 
                 $('#selectReports').change(function () {
 
                     if ($('#selectReports').val() == "") {
                         alert('Please select report');
                         return;
                     }
+                    var selectedReport = $('#selectReports option:selected').text();
 
                     $.ajax({
                         type: "POST",
                         async: false,
-                        url: "Admin.aspx/GetReport",
-                        data: JSON.stringify({ reportName: $('#selectReports').val() }),
+                        url: "Admin.aspx/ViewReport",
+                        data: JSON.stringify({ reportName: selectedReport}),
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
-                        success: function (response) {
-                            //window.location.href = response.d;
-                            window.open(response.d, '_blank');
+                        success: function (response) { 
+                            popupwindow(response.d, selectedReport, 1040, 480)
                         },
                         failure: function (msg) {
                             alert(msg.d);
@@ -82,24 +93,11 @@
             });
  
     </script>
-     <br />
-     <br />
-    <b>
-         Steps on opening the file:<br />
-         <br />
-         1.)
-        <br />
-         <img alt="" class="auto-style1" src="../Images/csv_Step1.png" />
-        <br />
-        <br />
-        2.)
-        <br />
-         <img alt="" class="auto-style1" src="../Images/csv_Step2.png" />
-        <br />
-        <br />
-        3.)
-        <br />
-         <img alt="" class="auto-style1" src="../Images/csv_Step3.png" />
-
-    </b>
+     <br /> 
+     <br /> 
+     <br /> 
+     <br /> 
+     <br /> 
+     <br /> 
+     <br /> 
 </asp:Content>

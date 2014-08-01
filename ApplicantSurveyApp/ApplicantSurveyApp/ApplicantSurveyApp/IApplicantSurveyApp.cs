@@ -15,7 +15,9 @@ namespace ApplicantSurveyApp {
 		[OperationContract]
 		List<Rate> GetRates();
 		[OperationContract]
-		List<ImageDetail> GetImages();
+        List<ImageDetail> GetImages();
+        [OperationContract]
+        List<string> GetReports(string reportDB, string FolderName);
 		[OperationContract]
 		List<ImageDetail> GetImagesFromDirectory(string localPath, string serverPath);
 		[OperationContract]

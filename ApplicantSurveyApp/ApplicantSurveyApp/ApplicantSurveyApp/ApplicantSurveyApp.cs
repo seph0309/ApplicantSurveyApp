@@ -75,6 +75,19 @@ namespace ApplicantSurveyApp
 			}
 			return imageDetail;
 		}
+        public List<string> GetReports(string reportDB, string FolderName)
+        {
+            conn = new DBConn.DBConn();
+            string _sql = string.Format("SELECT Name FROM [{0}].[dbo].catalog WHERE Path Like '{1}%'", reportDB, FolderName);
+            DataSet ds = conn.execSQLCommand(_sql);
+            List<string> _results = new List<string>();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                _results.Add(row["Name"].ToString());
+            }
+
+            return _results;
+        }
 		public List<ImageDetail> GetImagesFromDirectory(string localPath, string serverPath) {
 
 			List<ImageDetail> imageDetail = new List<ImageDetail>();
