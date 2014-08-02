@@ -17,7 +17,7 @@ namespace ApplicantSurveyApp.Web.Admin {
   
 		[WebMethod]
 		public static string ViewReport(string reportName) {
-            return string.Format("ReportDetails.aspx?reportFileName={0}", reportName);
+            return string.Format("../ReportDetails.aspx?reportFileName={0}", reportName);
 		}
 
         [WebMethod]

@@ -30,7 +30,7 @@
     <WarningLevel>4</WarningLevel>
     <RegisterForComInterop>false</RegisterForComInterop>
     <PlatformTarget>x86</PlatformTarget>
-    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
     <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -132,7 +132,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Admin\Admin.aspx" />
-    <Content Include="Admin\ReportDetails.aspx" />
+    <Content Include="ReportDetails.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\chosen.css" />
     <Content Include="Content\Site.css" />
@@ -309,11 +309,11 @@
     <Compile Include="Admin\Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ReportDetails.aspx.cs">
+    <Compile Include="ReportDetails.aspx.cs">
       <DependentUpon>ReportDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ReportDetails.aspx.designer.cs">
+    <Compile Include="ReportDetails.aspx.designer.cs">
       <DependentUpon>ReportDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
