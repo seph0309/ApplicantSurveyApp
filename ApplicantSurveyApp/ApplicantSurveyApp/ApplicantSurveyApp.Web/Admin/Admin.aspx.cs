@@ -12,7 +12,8 @@ using System.Web.UI.WebControls;
 namespace ApplicantSurveyApp.Web.Admin {
 	public partial class Admin : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
-		
+            if (Session["IsValidated"] == null)
+                Response.Redirect("../Login.aspx");
 		}
   
 		[WebMethod]

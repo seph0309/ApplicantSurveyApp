@@ -50,6 +50,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -132,6 +133,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Admin\Admin.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="ReportDetails.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\chosen.css" />
@@ -308,6 +310,13 @@
     </Compile>
     <Compile Include="Admin\Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReportDetails.aspx.cs">
       <DependentUpon>ReportDetails.aspx</DependentUpon>
