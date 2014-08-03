@@ -16,6 +16,8 @@ namespace ApplicantSurveyApp.Web
         {
             if (Session["IsValidated"] != null)
                 Response.Redirect(adminPage);
+            if (!IsPostBack)
+                txtUserName.Focus();
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -23,6 +25,7 @@ namespace ApplicantSurveyApp.Web
             string userName = txtUserName.Text;
             string password = txtPassword.Text;
             PrincipalContext con;
+            try { 
             using (con = new PrincipalContext(ContextType.ApplicationDirectory, ""))
             {
                 if (!con.ValidateCredentials(userName, password))
@@ -31,6 +34,10 @@ namespace ApplicantSurveyApp.Web
 
             Session["IsValidated"] = true;
             Response.Redirect(adminPage);
+            }
+            catch (Exception ex) { 
+                labelResult.Text=ex.Message.ToString();
+            }
         }
     }
 }

@@ -13,13 +13,37 @@
     </section>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    User Name:
-    <asp:TextBox runat="server" ID="txtUserName" Text="ADSDELTEKCOM\"></asp:TextBox>
-    <br /> 
-    Password: 
-    <asp:TextBox runat="server" ID="txtPassword" TextMode="Password"></asp:TextBox>
-    <br />
-    <br />
-    <asp:Label runat="server" ID="labelResult"></asp:Label>
-    <asp:Button ID="btnLogin" runat="server" Text="Submit" OnClick="btnLogin_Click" />
+    <table>
+        <tr>
+            <td>
+                User Name:
+            </td>
+            <td>
+                <asp:TextBox runat="server" ID="txtUserName" Text="ADSDELTEKCOM\"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorUserName" ForeColor="Red" ControlToValidate="txtUserName" runat="server" ErrorMessage="UserName Required "></asp:RequiredFieldValidator>
+            </td>            
+        </tr>   
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <asp:TextBox runat="server" ID="txtPassword" TextMode="Password"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" ForeColor="Red" ControlToValidate="txtPassword" runat="server" ErrorMessage="Password Required "></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <asp:Label runat="server" ForeColor="Red" ID="labelResult"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Button ID="btnLogin" runat="server" Text="Submit" OnClick="btnLogin_Click" />
+            </td>
+        </tr>
+    </table>
+
 </asp:Content>
