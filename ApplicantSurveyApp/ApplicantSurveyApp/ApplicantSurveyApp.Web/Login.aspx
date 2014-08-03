@@ -2,7 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
-    Login
+        <section class="featured">
+        <div class="content-wrapper">
+        <hgroup class="title">
+         <h2>
+                Login
+         </h2>
+        </hgroup>  
+        </div>
+    </section>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     User Name:

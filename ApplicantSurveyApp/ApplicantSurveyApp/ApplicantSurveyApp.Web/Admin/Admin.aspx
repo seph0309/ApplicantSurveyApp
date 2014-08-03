@@ -10,7 +10,15 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
-    
+        <section class="featured">
+        <div class="content-wrapper">
+        <hgroup class="title">
+         <h2>
+                Admin Page
+         </h2>
+        </hgroup>  
+        </div>
+    </section>
    <link rel="stylesheet" href="../Content/chosen.css">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
