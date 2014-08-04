@@ -22,17 +22,12 @@
    <link rel="stylesheet" href="../Content/chosen.css">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-     
-  <br />
   <br />
   <br />
     Reminder: be sure to turn off the pop-up blocker for you to open the reports.
   <br />
     <select data-placeholder="Please select a report..." id="selectReports" class="chosen-select" style="width:450px;" tabindex="2">
         <option value=""></option>
-        <%--<option value="SurveyStatistics">Statistics Report</option>
-        <option value="SurveyPercentage">Percentage Report</option>
-        <option value="CommentsAndPositionCount">Comments and Position Count Report</option>--%>
     </select> 
     
     <script type="text/javascript" src="../Scripts/jquery-1.8.2.min.js" ></script>  
@@ -46,7 +41,6 @@
                 var top = (screen.height / 2) - (h / 2);
                 return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
             }
-
 
             //Populate dropdown
             $.ajax({

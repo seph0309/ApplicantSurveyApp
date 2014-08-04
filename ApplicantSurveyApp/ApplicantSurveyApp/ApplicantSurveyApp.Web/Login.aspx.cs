@@ -25,15 +25,14 @@ namespace ApplicantSurveyApp.Web
             string userName = txtUserName.Text;
             string password = txtPassword.Text;
             PrincipalContext con;
-            try { 
-            using (con = new PrincipalContext(ContextType.ApplicationDirectory, ""))
-            {
-                if (!con.ValidateCredentials(userName, password))
-                    labelResult.Text = "Login failed";
-            }
-
-            Session["IsValidated"] = true;
-            Response.Redirect(adminPage);
+            try {
+                using (con = new PrincipalContext(ContextType.ApplicationDirectory, ""))
+                {
+                    if (!con.ValidateCredentials(userName, password))
+                        labelResult.Text = "Login failed";
+                    Session["IsValidated"] = true;
+                    Response.Redirect(adminPage);
+                }
             }
             catch (Exception ex) { 
                 labelResult.Text=ex.Message.ToString();
